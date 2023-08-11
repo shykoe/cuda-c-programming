@@ -5,8 +5,8 @@ C_APPS=
 all: ${C_APPS} ${CU_APPS}
 
 %: %.cu
-	nvcc -O2 -arch=sm_35 -o $@ $< -lcudadevrt --relocatable-device-code true
+	nvcc -O2 -arch=sm_90 -o $@ $< -lcudadevrt --relocatable-device-code true
 %: %.c
-	gcc -O2 -std=c99 -o $@ $<
+	g++ -O2 -std=c++17 -o $@ $<
 clean:
 	rm -f ${CU_APPS} ${C_APPS}
