@@ -59,7 +59,7 @@
 
 inline int64_t seconds() {
   return std::chrono::duration_cast<std::chrono::microseconds>(
-      std::chrono::high_resolution_clock::now().time_since_epoch());
+      std::chrono::high_resolution_clock::now().time_since_epoch()).count();
 }
 
 #endif // _COMMON_H
